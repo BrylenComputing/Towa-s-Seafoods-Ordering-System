@@ -1,0 +1,53 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: column_panel_1
+  properties: {border: '', role: elevated-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'OXCCNW,SKMBLB', full_width_row: false}
+  components:
+  - name: label_1
+    properties: {text: 'Charge ID:', italic: false, bold: true, align: center, font: Mulish}
+    type: Label
+    layout_properties: {grid_position: 'IHFLAX,JGMAUU'}
+  - name: charge_id_label
+    properties: {background: '', foreground: '', align: center}
+    type: Label
+    layout_properties: {grid_position: 'IHFLAX,HLNVNC'}
+  - name: label_3
+    properties: {text: 'Order Name:', align: center, italic: false, bold: true, font: Mulish}
+    type: Label
+    layout_properties: {grid_position: 'ZBPUGI,TEHJJX'}
+  - name: order_name_label
+    properties: {align: center}
+    type: Label
+    layout_properties: {grid_position: 'ZBPUGI,CZHHBE'}
+  - name: label_4
+    properties: {text: 'Pick-up Time:', align: center, italic: false, bold: true, font: Mulish}
+    type: Label
+    layout_properties: {grid_position: 'NARUYL,HGBPOX'}
+  - name: pickup_time_label
+    properties: {align: center}
+    type: Label
+    layout_properties: {grid_position: 'NARUYL,DQRDVG'}
+  - name: label_5
+    properties: {text: 'Items:', align: center, italic: false, bold: true, font: Mulish}
+    type: Label
+    layout_properties: {grid_position: 'RNDMLI,ERIUZB'}
+  - name: items_label
+    properties: {align: center}
+    type: Label
+    layout_properties: {grid_position: 'RNDMLI,AJKHMW'}
+  - name: label_6
+    properties: {text: 'Tip:', align: center, italic: false, bold: true, font: Mulish}
+    type: Label
+    layout_properties: {grid_position: 'BHPHFT,QWUMFB'}
+  - name: tip_label
+    properties: {align: center}
+    type: Label
+    layout_properties: {grid_position: 'BHPHFT,ARPYWS MKQSTB,ZVFIYI'}
+  - name: trash_button
+    properties: {text: DELETE, icon: 'fa:trash', role: filled-button, background: 'theme:On Surface'}
+    type: Button
+    layout_properties: {grid_position: 'UNLIMC,DKITIL'}
+    event_bindings: {click: trash_button_click}

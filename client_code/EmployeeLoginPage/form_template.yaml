@@ -1,0 +1,79 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html', background: '#046492 '}
+  data_bindings: []
+components:
+- type: ColumnPanel
+  properties: {background: ''}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: EmployeeHeaderCard
+    properties: {role: null, col_widths: '{}', spacing_above: none, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'AOEAIW,AKPXWL'}
+    data_bindings: []
+    components:
+    - name: transparent_box_1
+      properties: {role: transparent-box, col_widths: '{}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'TWCEPF,YGLPBX', full_width_row: true}
+      components:
+      - name: HeaderLabel1
+        properties: {role: input-prompt, bold: false, align: center, spacing_above: small, background: 'theme:Dark Overlay 1', icon: '', underline: false, font: Edu AU VIC WA NT Hand, icon_align: left, foreground: 'theme:On Secondary', spacing_below: small, visible: true, border: '', italic: false, font_size: 60, tooltip: '', text: Your dedication drives our success.}
+        type: Label
+        layout_properties: {grid_position: 'ROBJRS,KTRKIO', full_width_row: true}
+      - name: HeaderLabel2
+        properties: {role: input-prompt, bold: false, align: center, spacing_above: small, background: 'theme:Dark Overlay 1', icon: '', underline: false, font: Edu AU VIC WA NT Hand, icon_align: left, foreground: 'theme:On Secondary', spacing_below: small, visible: true, border: '', italic: false, font_size: 27, tooltip: '', text: Thank you for your hard work!}
+        type: Label
+        layout_properties: {grid_position: 'PSJXOS,AVSPND', full_width_row: true}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'BOHAOD,LCCYOO'}
+  - name: column_panel_1
+    properties: {role: elevated-card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'LZZBEJ,BHQGEC'}
+    components:
+    - name: EIDLabel
+      properties: {text: 'Employee ID:', font: Cabin, font_size: 20, align: left}
+      type: Label
+      layout_properties: {grid_position: 'RSXWLU,JVYMGT DHOZCH,UNFEWW'}
+    - name: PWLabel
+      properties: {text: 'Password:', align: left, font_size: 20, font: Cabin}
+      type: Label
+      layout_properties: {grid_position: 'RSXWLU,JVYMGT XJEZNW,NQZUWP'}
+    - name: EIDText
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'RSXWLU,LUHOAU YIFERV,CPSRWQ'}
+    - name: EPasswordText
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'RSXWLU,LUHOAU WHMTMO,KBBULD'}
+    - name: ELoginButton
+      properties: {text: Sign In, role: filled-button, background: 'theme:On Surface', foreground: 'theme:On Primary', font: Cabin}
+      type: Button
+      layout_properties: {grid_position: 'NECRRF,TYAHJV'}
+      event_bindings: {click: ELoginButton_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - name: EViewCartButton
+    properties: {text: View Cart, icon: 'fa:shopping-cart', foreground: 'theme:On Surface', font_size: 20, role: outlined-button, border: '', font: Nunito}
+    type: Button
+    event_bindings: {click: EViewCartButton_click}
+    layout_properties: {}
+  - name: LMenuButton
+    properties: {text: Back to Menu, icon: 'fa:book', foreground: 'theme:On Surface', font_size: 20, role: outlined-button, border: '', font: Nunito}
+    type: Button
+    event_bindings: {click: LMenuButton_click}
+    layout_properties: {}
+- name: BlackLogo
+  properties: {source: _/theme/towas-seafood-high-resolution-logo-black-transparent.png, height: 72.77774047851562}
+  type: Image
+  layout_properties: {slot: top-left-btn}

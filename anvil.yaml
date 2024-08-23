@@ -1,0 +1,61 @@
+allow_embedding: false
+package_name: Towa_s_Seafoods__Ordering_System__V1_4_
+db_schema:
+  menuitems:
+    title: MenuItems
+    client: full
+    server: full
+    columns:
+    - name: Name
+      admin_ui: {width: 200}
+      type: string
+    - name: Description
+      admin_ui: {width: 200}
+      type: string
+    - name: Price
+      admin_ui: {width: 200}
+      type: number
+    - name: Image
+      admin_ui: {width: 200}
+      type: media
+  orders:
+    title: Orders
+    client: full
+    server: full
+    columns:
+    - name: charge_id
+      admin_ui: {width: 200}
+      type: string
+    - name: order
+      admin_ui: {width: 200}
+      type: simpleObject
+  employees:
+    title: employees
+    client: full
+    server: full
+    columns:
+    - name: employee_id
+      admin_ui: {width: 200}
+      type: string
+    - name: password
+      admin_ui: {width: 200}
+      type: string
+startup: {type: form, module: Menu}
+name: Clone of Towa's Seafood - Ordering System (Original)
+startup_form: null
+correct_dependency_ids: {}
+renamed: true
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-sandbox
+  server_spec: {base: python310-standard}
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/stripe.yml
+  client_config:
+    publishable_key: {test: sk_test_51PmgOVP19Dika6fAu3JfpOdDefYey92QbMopXRE9DYdGW0Ty3pVeCi1yoaeuy4P4jc9L5l6aUz7s7wqrkzeZz4eS00wHfBqK7u}
+  server_config: {}

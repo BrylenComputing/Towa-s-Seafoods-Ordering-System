@@ -1,0 +1,62 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: MenuFoto
+    properties: {role: null, vertical_align: center, spacing_above: small, background: '', horizontal_align: center, source: '', foreground: '', display_mode: zoom_to_fill, spacing_below: small, visible: true, border: '', tooltip: '', height: 311}
+    type: Image
+    layout_properties: {grid_position: 'LHXJWI,JCOPBQ'}
+    data_bindings:
+    - {property: source, code: 'self.item[''img'']'}
+  - name: MenuName
+    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: Moderustic, icon_align: left, foreground: 'theme:Primary 700', spacing_below: small, visible: true, border: '', italic: false, font_size: 20, tooltip: '', text: ''}
+    type: Label
+    layout_properties: {grid_position: 'LHXJWI,NEHSVJ GCZMEQ,NINOON'}
+    data_bindings:
+    - {property: text, code: 'self.item[''name'']'}
+  - name: MenuPrice
+    properties: {font: Moderustic}
+    type: Label
+    layout_properties: {grid_position: 'LHXJWI,NEHSVJ YTXKML,FBFJSP'}
+    data_bindings:
+    - {property: text, code: 'f"${self.item[''price'']} each"'}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'LHXJWI,NEHSVJ KBNCHF,CCAETB'}
+  - name: QuantityLabel
+    properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: Moderustic, icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Quantity:'}
+    type: Label
+    layout_properties: {grid_position: 'LHXJWI,NEHSVJ IRYAVI,YGETMK'}
+  - name: QuantityBox
+    properties: {role: null, bold: false, align: left, placeholder: '', spacing_above: small, background: '', type: number, underline: false, font: Moderustic, hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: ''}
+    type: TextBox
+    layout_properties: {grid_position: 'LHXJWI,NEHSVJ SWIECQ,DMPRPL'}
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'LHXJWI,NEHSVJ NNKELN,SNMNBZ'}
+  - name: flow_panel_1
+    properties: {role: null, align: center, spacing_above: small, background: '', foreground: '', spacing_below: small, visible: true, border: '', tooltip: '', spacing: medium}
+    type: FlowPanel
+    layout_properties: {grid_position: 'LHXJWI,NEHSVJ QJZMUD,HQNZRF'}
+    components:
+    - name: ATCCartButton
+      properties: {role: filled-button, bold: false, align: full, spacing_above: small, background: '#B81D33', icon: '', underline: false, font: Nunito, icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: ADD TO CART}
+      type: Button
+      layout_properties: {grid_position: 'XWJJFA,BTUFOG HLJDJV,QCIANQ'}
+      event_bindings: {click: add_button_click}
+    - name: added_button
+      properties: {role: null, bold: false, align: full, spacing_above: small, background: '', icon: 'fa:check-circle-o', underline: false, font: Nunito, icon_align: left, foreground: '', spacing_below: small, visible: false, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Added}
+      type: Button
+      layout_properties: {grid_position: 'XWJJFA,BTUFOG HLJDJV,HTXYRT'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}

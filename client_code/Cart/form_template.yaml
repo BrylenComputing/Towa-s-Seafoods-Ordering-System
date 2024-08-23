@@ -1,0 +1,114 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html', background: '#FFF3E6'}
+components:
+- type: ColumnPanel
+  properties: {background: '#FFF3E6'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: empty_cart_panel
+    properties: {role: null, col_widths: '{}', spacing_above: small, background: '#FFF3E6', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: false, border: '', tooltip: ''}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'EVWHCM,PFCZSH'}
+    components:
+    - name: empty_cart_label
+      properties: {role: null, bold: false, align: center, spacing_above: small, background: '', icon: '', underline: false, font: Moderustic, icon_align: left, foreground: '#58181F', spacing_below: small, visible: true, border: '', italic: false, font_size: 16, tooltip: '', text: There is nothing in this cart.}
+      type: Label
+      layout_properties: {grid_position: 'JPOURI,RFTNMJ'}
+    - name: shop_button
+      properties: {role: filled-button, bold: false, align: center, spacing_above: small, background: '#B81D33', icon: '', underline: false, font: Moderustic, icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Shop Now}
+      type: Button
+      layout_properties: {grid_position: 'HQMVFH,CGYRIM'}
+      event_bindings: {click: shop_button_click}
+    - name: spacer_1
+      properties: {height: 120}
+      type: Spacer
+      layout_properties: {grid_position: 'EFILGL,RXYCXC'}
+  - name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'RVWTCC,UQJPOY'}
+    components:
+    - name: label_1
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: Moderustic, icon_align: left, foreground: '#58181F', spacing_below: small, visible: true, border: '', italic: false, font_size: 20, tooltip: '', text: My Cart}
+      type: Label
+      layout_properties: {grid_position: 'AJZASO,IFKUIC'}
+    - name: repeating_panel_1
+      properties: {item_template: Cart.RPModello}
+      type: RepeatingPanel
+      layout_properties: {grid_position: 'SYKTJE,HZMTRH'}
+    - name: label_2
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: Moderustic, icon_align: left, foreground: '#58181F', spacing_below: small, visible: true, border: '', italic: false, font_size: 20, tooltip: '', text: Order Summary}
+      type: Label
+      layout_properties: {grid_position: 'SYKTJE,WYOJRC YROKUY,TRVUXT'}
+    - name: column_panel_2
+      properties: {role: top-bottom-border, col_widths: '{}', spacing_above: small, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'SYKTJE,WYOJRC TIAJFD,UUGNGI'}
+      components:
+      - name: OrderNameLabel
+        properties: {text: 'Order Name:', role: null, foreground: '#B81D33', font: Nunito, font_size: 15}
+        type: Label
+        layout_properties: {grid_position: 'FJVATK,GSYATH DHCEQG,IERNFZ'}
+        data_bindings: []
+      - name: PickUpTimeLabel
+        properties: {text: 'Pick-Up Time:', foreground: '#B81D33', font: Nunito, font_size: 15}
+        type: Label
+        layout_properties: {grid_position: 'FJVATK,GSYATH CEMQHN,OREHAQ'}
+      - name: order_name_input
+        properties: {font: Nunito, role: outlined}
+        type: TextBox
+        layout_properties: {grid_position: 'FJVATK,TOLQUG KEZSXK,NUGITH'}
+      - name: pickup_time_input
+        properties: {pick_time: true, font: Nunito, role: outlined}
+        type: DatePicker
+        layout_properties: {grid_position: 'FJVATK,TOLQUG FUPGOE,QHALPX'}
+      - name: TipLabel
+        properties: {text: 'Tip:', foreground: '#B81D33', font: Nunito, font_size: 15}
+        type: Label
+        layout_properties: {grid_position: 'OGTQEA,IFRAUM'}
+      - name: tip_input
+        properties: {font: Nunito, role: outlined}
+        type: TextBox
+        layout_properties: {grid_position: 'OGTQEA,XEWQQF'}
+      - name: label_3
+        properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: Nunito, icon_align: left, foreground: '#B81D33', spacing_below: small, visible: true, border: '', italic: false, font_size: 15, tooltip: '', text: 'Subtotal: '}
+        type: Label
+        layout_properties: {grid_position: 'JROHWJ,EAARYA'}
+      - name: subtotal_label
+        properties: {role: null, bold: false, align: right, spacing_above: small, background: '', icon: '', underline: false, font: Nunito, icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: ''}
+        type: Label
+        layout_properties: {grid_position: 'JROHWJ,AWLTQF'}
+    - name: label_5
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: Moderustic, icon_align: left, foreground: '#58181F', spacing_below: small, visible: true, border: '', italic: false, font_size: 20, tooltip: '', text: 'Total:'}
+      type: Label
+      layout_properties: {grid_position: 'SYKTJE,WYOJRC XHQUEX,BMABKR'}
+    - name: total_label
+      properties: {role: null, bold: false, align: right, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '#B81D33', spacing_below: small, visible: true, border: '', italic: false, font_size: 20, tooltip: '', text: ''}
+      type: Label
+      layout_properties: {grid_position: 'SYKTJE,WYOJRC XHQUEX,OKPEAA'}
+    - name: checkout_button
+      properties: {role: filled-button, bold: false, align: center, spacing_above: small, background: '#B81D33', icon: 'fa:lock', underline: false, font: '', icon_align: left, foreground: 'theme:On Secondary', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Checkout}
+      type: Button
+      layout_properties: {grid_position: 'SYKTJE,WYOJRC SJXSQM,SFICEY'}
+      event_bindings: {click: checkout_button_click}
+    - name: TYOrderButton
+      properties: {role: null, bold: false, align: full, spacing_above: small, background: '', icon: 'fa:smile-o', underline: false, font: Moderustic, icon_align: left, foreground: '', spacing_below: small, visible: false, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Thank you for your order!}
+      type: Button
+      layout_properties: {grid_position: 'SYKTJE,WYOJRC PUZHRV,XUMEDN'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - name: ViewMenuButton
+    properties: {text: View Menu, icon: 'fa:book', foreground: '#B81D33', font_size: 20, role: outlined-button, border: '', font: Nunito}
+    type: Button
+    event_bindings: {click: ViewCartButton_click}
+    layout_properties: {}
+- name: Logo
+  properties: {source: _/theme/Towa's Logo - Transparent.png, height: 75.33332824707031}
+  type: Image
+  layout_properties: {slot: top-left-btn}
